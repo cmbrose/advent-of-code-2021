@@ -17,3 +17,15 @@ func ReadInputLines(path string) []string {
 
 	return strings.Split(string(content), "\n")
 }
+
+func ParseBitString(str string) int {
+	val := 0
+	for _, c := range str {
+		val <<= 1
+		if c == '1' {
+			val++
+		}
+	}
+
+	return val
+}
