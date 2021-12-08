@@ -29,3 +29,27 @@ func ParseBitString(str string) int {
 
 	return val
 }
+
+func AbsInt(x int) int {
+	if x < 0 {
+		return -x
+	} else {
+		return x
+	}
+}
+
+func MinInt(x, y int) int {
+	if x < y {
+		return x
+	}
+
+	return y
+}
+
+func MaxInt(x, y int) int {
+	if x < y {
+		return y
+	}
+
+	return x
+}
