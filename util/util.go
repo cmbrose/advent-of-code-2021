@@ -1,6 +1,7 @@
 package util
 
 import (
+	"fmt"
 	"os"
 	"strings"
 )
@@ -179,4 +180,32 @@ func Compare(a, b interface{}) int {
 	default:
 		panic("Unhandled type")
 	}
+}
+
+func ParseIntGrid() [][]int {
+	grid := [][]int{}
+
+	for _, line := range ReadInputLines("./input.txt") {
+		row := []int{}
+		for _, cell := range line {
+			row = append(row, int(cell-'0'))
+		}
+
+		grid = append(grid, row)
+	}
+
+	return grid
+}
+
+func PrintIntGrid(grid [][]int) {
+	rows := make([]string, len(grid))
+
+	for i, row := range grid {
+		rows[i] = ""
+		for _, cell := range row {
+			rows[i] += fmt.Sprintf("%d", cell)
+		}
+	}
+
+	fmt.Println(strings.Join(rows, "\n"))
 }
