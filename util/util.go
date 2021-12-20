@@ -151,6 +151,16 @@ func ExceptAll(a []interface{}, b ...[]interface{}) []interface{} {
 	return cur
 }
 
+func IntSliceToInterfaceSlice(a []int) []interface{} {
+	res := make([]interface{}, len(a))
+
+	for i, a := range a {
+		res[i] = a
+	}
+
+	return res
+}
+
 func RuneSliceToInterfaceSlice(a []rune) []interface{} {
 	res := make([]interface{}, len(a))
 
